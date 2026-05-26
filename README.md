@@ -23,18 +23,15 @@ git clone https://github.com/victorsteeb/Basecamp-Exercises.git
 ### Day 1
 | Folder | Session | Type |
 |--------|---------|------|
-| `day1/01_inventory-management` | Inventory Management (Claude Code workshop app) | Build-Along |
-| `day1/02_developer-platform` | Developer Platform | Build-Along |
-| `day1/03_prompt-rescue` | Prompt Rescue | Build-Along |
-| `day1/04_diagnosing-ai-problems` | Diagnosing AI Problems | Session materials |
+| `day1/01_developer-platform` | Developer Platform | Build-Along |
+| `day1/02_prompt-rescue` | Prompt Rescue | Build-Along |
+| `day1/03_diagnosing-ai-problems` | Diagnosing AI Problems | Session materials |
 
 ### Day 2
 | Folder | Session | Type |
 |--------|---------|------|
 | `day2/01_evals` | Evals | Build-Along |
 | `day2/02_inference-optimization` | Inference Optimization | Build-Along |
-| `day2/03_context-engineering` | Context Engineering | Build-Along |
-| `day2/04_agent-build-hackathon` | Agent Build Hackathon | MiniHack |
 
 Each folder has its own README with the exercise description and step-by-step run instructions.
 

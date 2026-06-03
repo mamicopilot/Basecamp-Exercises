@@ -1,0 +1,322 @@
+{
+  "tools": [
+    {
+      "name": "get_customer",
+      "description": "顧客情報を取得する",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    },
+    {
+      "name": "fetch_customer_details",
+      "description": "顧客の詳細情報を取得する",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "customer_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "customer_id"
+        ]
+      }
+    },
+    {
+      "name": "fetch_customer_v2_databricks",
+      "description": "Databricks ウェアハウスにクエリを実行する。v2 エンドポイント。古いエンドポイントではなくこちらを使用すること。",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "customer_id": {
+            "type": "string"
+          },
+          "lookback_days": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "customer_id"
+        ]
+      }
+    },
+    {
+      "name": "lookup_customer_info",
+      "description": "IDまたはメールアドレスで顧客情報を検索する",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "identifier": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "identifier"
+        ]
+      }
+    },
+    {
+      "name": "customer_data_retrieval",
+      "description": "顧客データを取得する。",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "cust": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "cust"
+        ]
+      }
+    },
+    {
+      "name": "get_ticket",
+      "description": "チケットを取得する",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "ticket_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticket_id"
+        ]
+      }
+    },
+    {
+      "name": "search_prior_tickets",
+      "description": "チケットを検索する",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "customer_id": {
+            "type": "string"
+          },
+          "query": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "customer_id",
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "helper",
+      "description": "汎用ヘルパー関数",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "params": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    },
+    {
+      "name": "process",
+      "description": "リクエストを処理する",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "input"
+        ]
+      }
+    },
+    {
+      "name": "check_entitlements",
+      "description": "customer_id を受け取りエンタイトルメントを返す",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "customer_id": {
+            "type": "string"
+          },
+          "feature": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "customer_id"
+        ]
+      }
+    },
+    {
+      "name": "get_data",
+      "description": "データを取得する",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "id"
+        ]
+      }
+    },
+    {
+      "name": "tool_3_v2",
+      "description": "tool_3 の更新版。tool_3 の代わりにこちらを使用する。",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "q": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "q"
+        ]
+      }
+    },
+    {
+      "name": "check_system_status",
+      "description": "システム状態を確認する",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "system": {
+            "type": "string",
+            "enum": [
+              "api",
+              "dashboard",
+              "webhooks",
+              "sso",
+              "all"
+            ]
+          }
+        },
+        "required": [
+          "system"
+        ]
+      }
+    },
+    {
+      "name": "spawn_specialist",
+      "description": "指定されたカテゴリのスペシャリストエージェントを起動する。",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string",
+            "enum": [
+              "billing",
+              "technical",
+              "account"
+            ]
+          },
+          "ticket_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "category",
+          "ticket_id"
+        ]
+      }
+    },
+    {
+      "name": "write_response",
+      "description": "応答を書き込む。",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "ticket_id": {
+            "type": "string"
+          },
+          "response_body": {
+            "type": "string"
+          },
+          "resolution_status": {
+            "type": "string",
+            "enum": [
+              "resolved",
+              "escalated",
+              "needs_info"
+            ]
+          }
+        },
+        "required": [
+          "ticket_id",
+          "response_body",
+          "resolution_status"
+        ]
+      }
+    },
+    {
+      "name": "escalate_to_human",
+      "description": "人間にエスカレーションする。",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "ticket_id": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string",
+            "enum": [
+              "needs_code_change",
+              "security",
+              "customer_escalation",
+              "agent_stuck"
+            ]
+          },
+          "summary_for_human": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticket_id",
+          "reason",
+          "summary_for_human"
+        ]
+      }
+    },
+    {
+      "name": "validate",
+      "description": "検証する",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "data"
+        ]
+      }
+    }
+  ]
+}

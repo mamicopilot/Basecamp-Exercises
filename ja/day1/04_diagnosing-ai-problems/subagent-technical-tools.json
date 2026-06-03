@@ -1,0 +1,133 @@
+{
+  "tools": [
+    {
+      "name": "get_ticket",
+      "description": "チケットを取得する",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "ticket_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticket_id"
+        ]
+      }
+    },
+    {
+      "name": "lookup_customer_by_email",
+      "description": "顧客を検索する",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "email"
+        ]
+      }
+    },
+    {
+      "name": "read_error_logs",
+      "description": "エラーログを読み込む。since_hours を指定しない限り直近24時間のみ。",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "customer_id": {
+            "type": "string"
+          },
+          "endpoint": {
+            "type": "string"
+          },
+          "status_code": {
+            "type": "integer"
+          },
+          "since_hours": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "customer_id"
+        ]
+      }
+    },
+    {
+      "name": "check_webhook_deliveries",
+      "description": "Webhook 配信ログ",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "customer_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "delivered",
+              "retrying",
+              "dropped",
+              "all"
+            ]
+          },
+          "since_hours": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "customer_id"
+        ]
+      }
+    },
+    {
+      "name": "test_api_key",
+      "description": "APIキーをテストする",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "key_prefix": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key_prefix"
+        ]
+      }
+    },
+    {
+      "name": "inspect_integration_config",
+      "description": "トラフィックヘッダーからインテグレーション設定を取得する",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "customer_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "customer_id"
+        ]
+      }
+    },
+    {
+      "name": "get_rate_limit_status",
+      "description": "レート制限の状態",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "customer_id": {
+            "type": "string"
+          },
+          "endpoint": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "customer_id"
+        ]
+      }
+    }
+  ]
+}
